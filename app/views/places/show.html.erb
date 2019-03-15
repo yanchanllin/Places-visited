@@ -1,0 +1,9 @@
+<div class="container">
+  <div class=" well col-sm-6">
+    <%= render 'shared/error_messages' %>
+    <h3>Places You Visited</h3>
+
+    <p>Title: <span class="placeTitle"><%=@place.title%></span></p>
+    
+    <%= link_to "Update Places Visited", edit_place_path(@place), class: "btn btn-info btn-sm dest_button" %><br><br>
+    <%= link_to "Delete Places Visited", [@place], method: :delete, data: { confirm: 'DELETE NOW?' }, class: "btn btn-warning btn-sm dest_button" %><br><br>

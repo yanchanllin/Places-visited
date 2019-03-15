@@ -1,0 +1,15 @@
+div class="container">
+  <div class=" well col-sm-6">
+    <h2>Edit Your Place</h2><br>
+    <%= form_for(@place) do |place_builder| %>
+      <%= render 'shared/error_messages' %>
+
+      <p>
+        <%= place_builder.label :title %>
+        <%= place_builder.text_field :title, class: 'form-control' %><br>
+      </p>
+
+      <%= place_builder.submit "Update", class: "btn btn-md btn-primary" %>
+    <% end %>
+  </div>
+</div>
