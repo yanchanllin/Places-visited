@@ -5,7 +5,10 @@ class User < ApplicationRecord
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :name, presence: true
     has_many :places
-  
+    def login
+      @login || self.username 
+    end
+
     def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
         user.password = Devise.friendly_token[0,20]
