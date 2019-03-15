@@ -1,0 +1,13 @@
+<header class="main-header">
+  <div class="title">
+    <h1 class="header-h1">Places Visited</h1>
+    <h4 class="header-h4">Create your places visited</h4>
+      <br>
+      <% if current_user %>
+        <%= link_to "Create Your Places", new_place_path, class: "btn btn-default" %>
+      <% else %>
+        <%= link_to "Sign up to create your places visited", new_user_registration_path, class: "btn btn-default" %>
+      <% end %>
+  </div>
+</header>
+<div class="center jumbotron"></div>
